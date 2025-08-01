@@ -6,6 +6,6 @@ nltk
 scikit-learn
 notebook
 PyYAML
-
+request
 ##local packages -
 # -e . 
