@@ -33,8 +33,12 @@ def fetch_poster(movie_id):
         return "https://via.placeholder.com/300x450.png?text=Error"
 
 # --- Load Pickled Files ---
-movies = pickle.load(open('artifacts/movies.pkl', 'rb')).reset_index(drop=True)
-similar_indices = pickle.load(open('artifacts/all_neighbors.pkl', 'rb'))
+try:
+    movies = pickle.load(open('artifacts/movies.pkl', 'rb')).reset_index(drop=True)
+    similar_indices = pickle.load(open('artifacts/all_neighbors.pkl', 'rb'))
+except FileNotFoundError:
+    st.error("Model files not found. Please make sure the 'artifacts' directory contains the required model files.")
+    st.stop()
 
 # --- Get Similar Movie Indices ---
 def get_similar_indices(movie):
