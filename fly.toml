@@ -1,0 +1,19 @@
+app = "cineml-movie-recommender"  # Change this to your desired app name
+
+[build]
+  image = ""  # Leave blank if using Dockerfile
+
+[env]
+  PORT = "8501"
+
+[[services]]
+  internal_port = 8501
+  protocol = "tcp"
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
