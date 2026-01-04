@@ -94,7 +94,7 @@ selected_movie = st.selectbox("Type or Select a movie to get recommendations", m
 
 # Reset pagination when a new movie is selected
 if st.session_state.selected_movie_index is None or st.session_state.selected_movie_index != selected_movie:
-    st.session_state.page = 5
+    st.session_state.page = 1
     st.session_state.loaded_recommendations = {'names': [], 'posters': []}
 
 if st.button('Show Recommendations'):

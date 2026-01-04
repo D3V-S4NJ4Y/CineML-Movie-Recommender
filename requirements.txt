@@ -7,7 +7,10 @@ scikit-learn
 notebook
 PyYAML
 requests
+<<<<<<< HEAD
 python-dotenv
+=======
+>>>>>>> 0fb807a43790037e85a9ed371171f84345b2cf5b
 
 ##local packages -
 # -e . 

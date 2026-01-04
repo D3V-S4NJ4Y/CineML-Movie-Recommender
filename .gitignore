@@ -131,10 +131,13 @@ dmypy.json
 # Large model files
 # artifacts/*.pkl
 
+<<<<<<< HEAD
 # Large dataset files
 data/TMDB_movie_dataset_v11.csv
 *.csv
 
+=======
+>>>>>>> 0fb807a43790037e85a9ed371171f84345b2cf5b
 # if using pycharm
 .idea
 
