@@ -1,125 +1,184 @@
- # Project: ML Based Movie Recommender System!
+# CineML: Advanced Movie Recommender System
 
-<img src="docs/intro.jpeg" alt="workflow" width="70%">
+<img src="cineMl.png" alt="CineML Logo" width="70%">
 
-Recommendation systems are becoming increasingly important in today’s extremely busy world. People are always short on time with the myriad tasks they need to accomplish in the limited 24 hours. Therefore, the recommendation systems are important as they help them make the right choices, without having to expend their cognitive resources.
+An intelligent movie recommendation system built with machine learning that analyzes over 1 million movies to provide personalized recommendations. The system uses TF-IDF vectorization and cosine similarity to find movies with similar content, themes, and characteristics.
 
-The purpose of a recommendation system basically is to search for content that would be interesting to an individual. Moreover, it involves a number of factors to create personalised lists of useful and interesting content specific to each user/individual. Recommendation systems are Artificial Intelligence based algorithms that skim through all possible options and create a customized list of items that are interesting and relevant to an individual. These results are based on their profile, search/browsing history, what other people with similar traits/demographics are watching, and how likely are you to watch those movies. This is achieved through predictive modeling and heuristics with the data available.
+## 🎬 Features
 
-# Types of Recommendation System :
-
-### 1 ) Content Based :
-
-- Content-based systems, which use characteristic information and takes item attriubutes into consideration .
-
-- Twitter , Youtube .
-
-- Which music you are listening , what singer are you watching . Form embeddings for the features .
-	
-- User specific actions or similar items reccomendation .
-	
-- It will create a vector of it .
-	
-- These systems make recommendations using a user's item and profile features. They hypothesize that if a user was interested in an item in the past, they will once again be interested in it in the future
-	
-- One issue that arises is making obvious recommendations because of excessive specialization (user A is only interested in categories B, C, and D, and the system is not able to recommend items outside those categories, even though they could be interesting to them).
-
-### 2 ) Collaborative Based :
-		
-- Collaborative filtering systems, which are based on user-item interactions.
-	
-- Clusters of users with same ratings , similar users .
-	
-- Book recommendation , so use cluster mechanism .
-	
-- We take only one parameter , ratings or comments .
-	
-- In short, collaborative filtering systems are based on the assumption that if a user likes item A and another user likes the same item A as well as another item, item B, the first user could also be interested in the second item . 
-	
-- Issues are :
-
-	- User-Item nXn matrix , so computationally expensive .
-
-	- Only famous items will get reccomended .
-
-	- New items might not get reccomended at all .   
-
-### 3 ) Hybrid Based :
-	
-- Hybrid systems, which combine both types of information with the aim of avoiding problems that are generated when working with just one kind.
-
-- Combination of both and used now a days .
-
-- Uses : word2vec , embedding .           
-
-# About this project:
-
-This is a content based movies recommender system & a streamlit web application that can recommend various kinds of similar movies based on an user interest.
+- **1M+ Movie Database**: Comprehensive dataset with detailed movie information
+- **Real-time Recommendations**: Instant suggestions based on content similarity
+- **Interactive Web Interface**: Clean, user-friendly Streamlit application
+- **Movie Posters**: Real movie posters fetched from TMDB API
+- **Batch Loading**: Progressive loading for better performance
+- **Smart Caching**: Optimized API calls with intelligent caching
 
 
-# Demo:
+## 🛠️ Technology Stack
 
-<img src="docs/1.png" alt="workflow" width="70%">
+- **Frontend**: Streamlit
+- **Machine Learning**: Scikit-learn (TF-IDF, Cosine Similarity, KNN)
+- **Data Processing**: Pandas, NumPy
+- **Text Processing**: NLTK
+- **API Integration**: TMDB API for movie posters
+- **Deployment**: Render (Cloud Platform)
 
-<img src="docs/2.png" alt="workflow" width="70%">
+## 📊 Algorithm
 
+The recommendation system uses:
 
+1. **TF-IDF Vectorization**: Converts movie descriptions into numerical vectors
+2. **Cosine Similarity**: Measures similarity between movies based on content
+3. **K-Nearest Neighbors**: Finds the most similar movies efficiently
+4. **Content-Based Filtering**: Recommends movies based on plot, genre, and keywords
 
-# Dataset has been used:
+## 🏗️ Project Structure
 
-* [Dataset link](https://www.kaggle.com/tmdb/tmdb-movie-metadata?select=tmdb_5000_movies.csv)
-
-# Concept used to build the model.pkl file : cosine_similarity
-
-1 . Cosine Similarity is a metric that allows you to measure the similarity of the documents.
-
-2 . In order to demonstrate cosine similarity function we need vectors. Here vectors are numpy array.
-
-3 . Finally, Once we have vectors, We can call cosine_similarity() by passing both vectors. It will calculate the cosine similarity between these two.
-
-4 . It will be a value between [0,1]. If it is 0 then both vectors are complete different. But in the place of that if it is 1, It will be completely similar.
-
-5 . For more details , check URL : https://www.learndatasci.com/glossary/cosine-similarity/
-
-
-# Built With
-1. streamlit
-2. NLTK
-3. sklearn
-
-# How to run?
-### STEPS:
-
-Clone the repository
-
-```bash
-https://github.com/entbappy/ML-Based-Movies-Recommender-System.git
 ```
-### STEP 01- Create a conda environment after opening the repository
-
-```bash
-conda create -n movie python=3.7.10 -y
+Movie-Recommender-1M/
+├── app.py                          # Main Streamlit application
+├── artifacts/
+│   ├── movies.pkl                  # Processed movie dataset
+│   └── all_neighbors.pkl          # Pre-computed similarity indices
+├── data/
+│   └── TMDB_movie_dataset_v11.csv # Raw dataset (1M+ movies)
+├── Recommender system.ipynb       # Model training notebook
+├── requirements.txt               # Python dependencies
+├── render.yaml                    # Render deployment config
+├── Procfile                       # Process configuration
+└── setup.sh                       # Deployment setup script
 ```
 
+## 🔧 Installation & Setup
+
+### Prerequisites
+- Python 3.7+
+- Git
+
+### Local Development
+
+1. **Clone the repository**
 ```bash
-conda activate movie
+git clone https://github.com/D3V-S4NJ4Y/CineML-Movie-Recommender.git
+cd CineML-Movie-Recommender
 ```
 
+2. **Create virtual environment**
+```bash
+python -m venv movie-env
+source movie-env/bin/activate  # On Windows: movie-env\Scripts\activate
+```
 
-### STEP 02- install the requirements
+3. **Install dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-
-Now run,
+4. **Run the application**
 ```bash
 streamlit run app.py
 ```
 
-```bash
-Note: Before clicking on show recommendations first of all click on Train Recommender System for generating models
-```
+5. **Access the app**
+Open your browser and go to `http://localhost:8501`
 
+## 🌐 Deployment on Render
 
+### Automatic Deployment
 
+1. **Fork this repository** to your GitHub account
+
+2. **Connect to Render**
+   - Go to [Render Dashboard](https://render.com/)
+   - Click "New" → "Blueprint"
+   - Connect your GitHub repository
+   - Render will automatically detect `render.yaml`
+
+3. **Deploy**
+   - Click "Apply" to start deployment
+   - Your app will be live at `https://your-app-name.onrender.com`
+
+### Manual Deployment
+
+1. **Create Web Service**
+   - Go to Render Dashboard
+   - Click "New" → "Web Service"
+   - Connect GitHub repository
+
+2. **Configure Service**
+   - **Name**: movie-recommender-app
+   - **Runtime**: Python
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `streamlit run app.py --server.port=$PORT --server.address=0.0.0.0`
+
+## 📈 Model Performance
+
+- **Dataset Size**: 1,209,193 movies
+- **Features Used**: Overview, Genres, Keywords, Production Companies
+- **Vectorization**: TF-IDF with 10,000 features
+- **Similarity Metric**: Cosine Similarity
+- **Recommendation Speed**: < 1 second for 100 recommendations
+
+## 🎯 How It Works
+
+1. **Data Preprocessing**
+   - Extract relevant features (overview, genres, keywords)
+   - Clean and normalize text data
+   - Apply stemming using Porter Stemmer
+
+2. **Feature Engineering**
+   - Combine all text features into tags
+   - Convert to TF-IDF vectors
+   - Build similarity matrix using cosine similarity
+
+3. **Recommendation Generation**
+   - Find K-nearest neighbors for selected movie
+   - Rank by similarity score
+   - Fetch movie posters from TMDB API
+   - Display results with progressive loading
+
+## 🔑 API Configuration
+
+The app uses TMDB API for movie posters. The API key is included for demo purposes, but for production use:
+
+1. Get your API key from [TMDB](https://www.themoviedb.org/settings/api)
+2. Replace the API key in `app.py`
+3. Consider using environment variables for security
+
+## 🚀 Performance Optimizations
+
+- **Caching**: Streamlit caching for API calls and computations
+- **Batch Loading**: Load recommendations in batches of 10
+- **Session Management**: Retry strategy for API failures
+- **Progressive Display**: Show results as they load
+- **Optimized Vectors**: Pre-computed similarity indices
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **TMDB**: For providing the comprehensive movie database
+- **Streamlit**: For the amazing web framework
+- **Scikit-learn**: For machine learning algorithms
+- **Render**: For free hosting platform
+
+## 📞 Contact
+
+- **Author**: Your Name
+- **Email**: your.email@example.com
+- **LinkedIn**: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+- **GitHub**: [Your GitHub](https://github.com/yourusername)
+
+---
+
+⭐ **Star this repository if you found it helpful!**

@@ -128,6 +128,13 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Large model files
+# artifacts/*.pkl
+
+# Large dataset files
+data/TMDB_movie_dataset_v11.csv
+*.csv
+
 # if using pycharm
 .idea
 
@@ -138,5 +145,4 @@ dmypy.json
 configs/secrets.yaml
 
 # add your env folder here if its there
-
-
+env/

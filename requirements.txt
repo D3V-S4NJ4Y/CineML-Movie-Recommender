@@ -6,6 +6,8 @@ nltk
 scikit-learn
 notebook
 PyYAML
+requests
+python-dotenv
 
 ##local packages -
 # -e . 
