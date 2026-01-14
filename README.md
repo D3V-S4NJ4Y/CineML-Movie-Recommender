@@ -1,6 +1,7 @@
 # CineML: Advanced Movie Recommender System
 
 <img src="cineMl.png" alt="CineML Logo" width="70%">
+[Visit CineML](https://huggingface.co/spaces/MrSanjay/CineML)
 
 An intelligent movie recommendation system built with machine learning that analyzes over 1 million movies to provide personalized recommendations. The system uses TF-IDF vectorization and cosine similarity to find movies with similar content, themes, and characteristics.
 
@@ -172,13 +173,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Scikit-learn**: For machine learning algorithms
 - **Render**: For free hosting platform
 
-## 📞 Contact
-
-- **Author**: Your Name
-- **Email**: your.email@example.com
-- **LinkedIn**: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- **GitHub**: [Your GitHub](https://github.com/yourusername)
-
----
 
 ⭐ **Star this repository if you found it helpful!**
