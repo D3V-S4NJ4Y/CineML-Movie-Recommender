@@ -1,9 +1,9 @@
 # CineML: Advanced Movie Recommender System
 
 <img src="cineMl.png" alt="CineML Logo" width="70%">
-[Visit CineML](https://huggingface.co/spaces/MrSanjay/CineML)
 
 An intelligent movie recommendation system built with machine learning that analyzes over 1 million movies to provide personalized recommendations. The system uses TF-IDF vectorization and cosine similarity to find movies with similar content, themes, and characteristics.
+👉 [Visit CineML](https://huggingface.co/spaces/MrSanjay/CineML)
 
 ## 🎬 Features
 
